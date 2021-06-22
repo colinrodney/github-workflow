@@ -1,0 +1,46 @@
+David Mahler - Intro to Git: Branching and MERGING
+1. Work on a git repo
+
+  - Use standard git workflow:
+    1) add > 2) commit > 3) push
+
+  - To copy file content from one file to another use command: 
+    'cp' --> syntax: cp <first fileName> <new fileName>
+
+2. Define branches  
+
+  A. What is a branch for? (@2:32)
+    1. Branches allow us to work on different versions of the same file in parallel. 
+
+    2. Branches result in seprate versions of the same file.
+
+    NOTE: git automatically creates your first branch named 'master' or 'main'.
+
+  B. How is a branch implemented?
+    - Branches are POINTERS to a sha1 hash (otherwise known as a commit). In layman terms, branches point to commits in git.
+
+    - As long as we remain on the same branch each time a change/ commit is made, the branch moves up and follows the commits/ changes being made. (ie the branch stays at the tip of our work).
+
+    - Git knows what branch we are on by using a special POINTER named HEAD.
+
+3. Understanding HEAD (@ 3:48)
+  1. What is HEAD?
+    a. A pointer that normally points to a branch. [ branches > commits and HEAD > branch]
+
+    b. Sometimes called a "symbolic pointer" since it usually points to a branch and not a commit.
+
+    c. In git terminology - the HEAD pointer lets us know what branch is currently checked-out (the branch that is checked-out is the branch you are CURRENTLY on).
+
+  2. How to Create new branches (@ 5:03)
+    a. command: 'git branch <branchName>
+      1. Makes a new branch w/ the specified filename in git.
+
+      2. New branches are instantiated at the same location as the HEAD pointer.
+
+        ex: git branch index --> makes a branch in git named 'index'
+
+      3. To see all branches in a a repository use command:
+        'git branch'
+          1. Shows a list of all branches in a repository
+
+          2. The asterisk (*) indicates which branch we are on AND the current branch name will be green. This also represents the currently checked-out branch. More specifically, this means the HEAD pointer is currently pointing to this branch.
