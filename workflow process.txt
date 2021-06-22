@@ -1,0 +1,34 @@
+Github Workflow Process:
+
+1. Create / Checkout branches ONLY AS NEEDED!
+
+2. Start Making Changes.
+
+3. When done mnaking changes on desired branches:
+  a. Add changes to staging area using command:
+    'git add <fileName>' OR 'git add .' to add all files.
+
+    b. Commit your changes to the branch. NOTE: Do not push anything (if at all possible) UNTIL ALL changes have been merged into the master/main branch (or what ever branch is serving the active deployment)[the target branch].
+
+    c. Make sure the working tree on the branch that is CURRENTLY checked-out is CLEAN using command: 'git status'.
+
+    d. Checkout/switch to the 'master' or 'main'
+    (or whatever branch is serving your live deployment) [the target branch] + make sure to ALWAYS begin w/ a clean working tree!. If your working tree is NOT clean, add/ resotre changes as needed.
+
+    e. MERGE commits from other branches into the 'master' or 'main'
+    (or whatever branch is serving your live deployment) using command:
+      'git merge <source branchName>'
+      
+      NOTE: Make sure to checkout/ switch to the TARGET BRANCH BEFORE MERGING your other branches!! (This helps to avoid conflicts!).
+
+    f.
+    After ALL commits from the SOURCE BRANCH have been merged into the TARGET BRANCH > check your working tree again @ target branch to make sure it is clean!
+
+    g. 
+    When the working tree is CLEAN @ target branch we can now PUSH changes merged into the target branch FROM the local repository > target branch @ origin/remote repository.
+
+     NOTE: This step should make the changes live @ the deployment site
+
+     NOTE: Conflicts happen when multiple separate branches try to make changes at the SAME FILE at the SAME LINE.
+
+     * If conflicts should arise, review all cahnges and determine which changes should be kept and which changes are to be discarded.
